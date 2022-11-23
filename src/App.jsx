@@ -3,11 +3,13 @@ import logoTrevenque from './assets/logo.svg'
 import logoTechBeer from './assets/logo.png'
 import './App.css'
 
-function App() {
-  const version = 1
+function App({ version }) {
+  if (typeof version !== 'number') {
+    throw new Error("number")
+  }
   return (
     <div className="App">
-      <img src={logoTechBeer} alt="Trevenque" />
+      <img src={logoTechBeer} alt="TechAndBeer" />
       <h1>TechAndBeer #{version}</h1>
     </div>
   )
