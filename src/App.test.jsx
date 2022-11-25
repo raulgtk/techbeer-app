@@ -1,8 +1,12 @@
 import { render, screen } from '@testing-library/react'
 import { describe, it, expect } from 'vitest'
+import { checkVersion } from './utils'
 import App from './App'
 
 describe('TechAndBeer', () => {
+  it('should throw error', () => {
+    expect(() => checkVersion("A")).toThrow(/ERR/)
+  })
   it('should be render', () => {
     render(<App version={1} />)
   })

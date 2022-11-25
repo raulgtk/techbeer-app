@@ -1,12 +1,9 @@
-import { useState } from 'react'
-import logoTrevenque from './assets/logo.svg'
 import logoTechBeer from './assets/logo.png'
+import { checkVersion } from './utils'
 import './App.css'
 
 function App({ version }) {
-  if (typeof version !== 'number') {
-    throw new Error("number")
-  }
+  checkVersion(version)
   return (
     <div className="App">
       <img src={logoTechBeer} alt="TechAndBeer" />
